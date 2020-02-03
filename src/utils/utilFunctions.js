@@ -20,8 +20,8 @@ const searchByFacility = (facility, hotels) => {
     }, [])
 }
 
-const searchByRating = () => {
-    return [{}]
+const searchByRating = (rating, hotels) => {
+    return hotels
 }
 
 module.exports = { searchByName, searchByFacility, searchByRating }
