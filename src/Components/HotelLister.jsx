@@ -9,15 +9,21 @@ const hotelsArray = require("../utils/hotels.json");
 class HotelLister extends Component {
     state = { hotels: [], err: false }
     render() {
-        const { hotels } = this.state;
+        const { hotels, err } = this.state;
         const { nameChanged, ratingChanged, facilityChanged } = this;
         return (<div>
             <NameFilter hotels={hotels} nameChanged={nameChanged} />
             <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
             <FacilityFilter hotels={hotels} facilityChanged={facilityChanged} />
-            <ul>{hotels.map(hotel => {
-                return <li>{hotel.name}</li>
-            })}</ul>
+            <br />
+            {err ? <h3>Hotel Not Found</h3> :
+                <ul>
+                    {hotels.map(hotel => {
+                        return <li style={{ fontSize: 20 }}>{`Name: ${hotel.name} || Rating: ${hotel.starRating} || ${hotel.facilities}`}</li>
+                    })}
+                </ul>
+
+            }
         </div>);
     }
     componentDidMount() {
