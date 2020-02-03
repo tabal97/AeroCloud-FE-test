@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class FacilityFilter extends Component {
     state = {}
     render() {
-        return (  );
+        return (<h3>this is the facility filter</h3>);
     }
 }
 

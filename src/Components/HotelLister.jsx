@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as filter from "../utils/utilFunctions"
 import NameFilter from './NameFilter.jsx';
 import RatingFilter from './RatingFilter';
+import FacilityFilter from './FacilityFilter';
 const hotelsArray = require("../utils/hotels.json");
 
 
@@ -13,6 +14,7 @@ class HotelLister extends Component {
         return (<div>
             <NameFilter hotels={hotels} nameChanged={nameChanged} />
             <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
+            <FacilityFilter />
             <ul>{hotels.map(hotel => {
                 return <li>{hotel.name}</li>
             })}</ul>
