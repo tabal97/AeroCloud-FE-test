@@ -10,11 +10,11 @@ class HotelLister extends Component {
     state = { hotels: [], err: false }
     render() {
         const { hotels } = this.state;
-        const { nameChanged, ratingChanged } = this;
+        const { nameChanged, ratingChanged, facilityChanged } = this;
         return (<div>
             <NameFilter hotels={hotels} nameChanged={nameChanged} />
             <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
-            <FacilityFilter />
+            <FacilityFilter hotels={hotels} facilityChanged={facilityChanged} />
             <ul>{hotels.map(hotel => {
                 return <li>{hotel.name}</li>
             })}</ul>
@@ -31,6 +31,11 @@ class HotelLister extends Component {
     }
     ratingChanged = (rating) => {
         const newHotels = filter.searchByRating(rating, hotelsArray);
+        this.setState({ hotels: newHotels })
+    }
+    facilityChanged = (facility) => {
+        const { hotels } = this.state;
+        const newHotels = filter.searchByFacility(facility, hotels);
         this.setState({ hotels: newHotels })
     }
 }

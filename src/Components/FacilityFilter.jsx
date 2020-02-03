@@ -15,11 +15,14 @@ class FacilityFilter extends Component {
                     <option value="free wifi">Free WiFi</option>
                 </select></div>);
     };
+
     handleChange = (e) => {
         const { value } = e.target;
         this.setState({
             facility: value
         })
+        this.props.facilityChanged(value);
+        this.setState({ facility: "" })
     }
 }
 
