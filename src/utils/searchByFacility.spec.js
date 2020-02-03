@@ -19,4 +19,8 @@ describe('Search By Facility', () => {
         const expectedValue = "car park";
         expect(actualValue.includes(expectedValue)).toBe(true)
     });
+    it('does not mutate hotelsArray taken from JSON file', () => {
+        const actualValue = searchByFacility("car park", hotelsArray);
+        expect(actualValue).not.toBe(hotelsArray)
+    });
 });
