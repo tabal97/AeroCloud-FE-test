@@ -13,6 +13,7 @@ class FacilityFilter extends Component {
                     <option value="pool">Pool</option>
                     <option value="car park">Car Park</option>
                     <option value="free wifi">Free WiFi</option>
+
                 </select></div>);
     };
 }
