@@ -4,11 +4,15 @@ const hotelsArray = require("../utils/hotels.json");
 
 
 class HotelLister extends Component {
-    state = {}
+    state = { hotels: [] }
     render() {
-        return (<ul>{hotelsArray.map(hotel => {
+        const { hotels } = this.state;
+        return (<ul>{hotels.map(hotel => {
             return <li>{hotel.name}</li>
         })}</ul>);
+    }
+    componentDidMount() {
+        this.setState({ hotels: hotelsArray })
     }
 }
 
