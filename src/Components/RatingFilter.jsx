@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class RatingFilter extends Component {
     state = {}
     render() {
-        return (  );
+        return (<h3>rating filter</h3>);
     }
 }
 
