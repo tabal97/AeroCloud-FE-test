@@ -10,11 +10,12 @@ class HotelLister extends Component {
     state = { hotels: [], err: false }
     render() {
         const { hotels, err } = this.state;
-        const { nameChanged, ratingChanged, facilityChanged } = this;
+        const { nameChanged, ratingChanged, facilityChanged, resetFilters } = this;
         return (<div>
             <NameFilter hotels={hotels} nameChanged={nameChanged} />
             <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
             <FacilityFilter hotels={hotels} facilityChanged={facilityChanged} />
+            <button onClick={resetFilters}>Reset Filters!</button>
             <br />
             {err ? <h3>Hotel Not Found</h3> :
                 <ul>
@@ -43,6 +44,9 @@ class HotelLister extends Component {
         const { hotels } = this.state;
         const newHotels = filter.searchByFacility(facility, hotels);
         this.setState({ hotels: newHotels })
+    }
+    resetFilters = () => {
+        this.setState({ hotels: hotelsArray, err: false })
     }
 }
 

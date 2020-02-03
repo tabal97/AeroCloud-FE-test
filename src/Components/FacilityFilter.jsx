@@ -8,7 +8,7 @@ class FacilityFilter extends Component {
             <div>
                 <h4>Facility:</h4>
                 <select value={facility} onChange={this.handleChange}>
-                    <option selected value="" disabled>All</option>
+                    <option selected value="" disabled>N/A</option>
                     <option value="gym">Gym</option>
                     <option value="pool">Pool</option>
                     <option value="car park">Car Park</option>
@@ -22,7 +22,6 @@ class FacilityFilter extends Component {
             facility: value
         })
         this.props.facilityChanged(value);
-        this.setState({ facility: "" })
     }
 }
 
