@@ -31,4 +31,9 @@ describe('Search By Name', () => {
         const actualValue = searchByName("", hotelsArray);
         expect(actualValue).not.toBe(hotelsArray)
     });
+    it('returns a message object when a non-existent hotel is passed as an argument', () => {
+        const actualValue = searchByName("fakeHotel", hotelsArray)
+        const expectedValue = { msg: "hotel not found" };
+        expect(actualValue).toEqual(expectedValue)
+    });
 });
