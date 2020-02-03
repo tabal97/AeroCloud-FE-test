@@ -16,6 +16,8 @@ class RatingFilter extends Component {
         this.setState({
             rating: value
         })
+        const rating = Number(value)
+        this.props.ratingChanged(rating);
     }
 }
 
