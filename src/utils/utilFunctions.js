@@ -9,7 +9,7 @@ const searchByName = (name, hotels) => {
 }
 
 const searchByFacility = (name, hotels) => {
-    return [{}]
+    return hotels
 }
 
 const searchByRating = () => {

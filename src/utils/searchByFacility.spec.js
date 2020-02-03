@@ -7,4 +7,10 @@ describe('Search By Facility', () => {
         expect(Array.isArray(actualValue)).toBe(true);
         expect(typeof actualValue[0]).toBe("object");
     });
+    it('objects in the array contain the correct keys', () => {
+        const hotels = searchByFacility("car park", hotelsArray)
+        const actualValue = Object.keys(hotels[0])
+        const expectedValue = ["name", "starRating", "facilities"];
+        expect(actualValue).toEqual(expectedValue)
+    });
 });
