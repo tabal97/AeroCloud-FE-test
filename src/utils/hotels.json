@@ -1,0 +1,65 @@
+[
+    {
+        "name": "hotelone",
+        "starRating": 5,
+        "facilities": [
+            "car park",
+            "pool"
+        ]
+    },
+    {
+        "name": "hoteltwo",
+        "starRating": 3,
+        "facilities": [
+            "car park",
+            "gym"
+        ]
+    },
+    {
+        "name": "hotelthree",
+        "starRating": 3,
+        "facilities": []
+    },
+    {
+        "name": "hilton",
+        "starRating": 3,
+        "facilities": [
+            "gym"
+        ]
+    },
+    {
+        "name": "the principal",
+        "starRating": 4,
+        "facilities": [
+            "car park",
+            "gym"
+        ]
+    },
+    {
+        "name": "hotel gotham",
+        "starRating": 4,
+        "facilities": [
+            "car park",
+            "gym",
+            "pool"
+        ]
+    },
+    {
+        "name": "travelodge",
+        "starRating": 1,
+        "facilities": [
+            "car park",
+            "gym"
+        ]
+    },
+    {
+        "name": "the niu Loom",
+        "starRating": 5,
+        "facilities": [
+            "car park",
+            "gym",
+            "free wifi",
+            "pool"
+        ]
+    }
+]
