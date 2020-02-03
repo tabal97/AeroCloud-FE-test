@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import * as filter from "../utils/utilFunctions"
 import NameFilter from './NameFilter.jsx';
 const hotelsArray = require("../utils/hotels.json");
-// import * as filter from "../utils/utilFuncs"
 
 
 class HotelLister extends Component {
-    state = { hotels: [] }
+    state = { hotels: [], err: false }
     render() {
         const { hotels } = this.state;
+        const { nameChanged } = this;
         return (<div>
-            <NameFilter />
+            <NameFilter hotels={hotels} nameChanged={nameChanged} />
             <ul>{hotels.map(hotel => {
                 return <li>{hotel.name}</li>
             })}</ul>
@@ -17,6 +18,12 @@ class HotelLister extends Component {
     }
     componentDidMount() {
         this.setState({ hotels: hotelsArray })
+    }
+    nameChanged = (name) => {
+        const { hotels } = this.state;
+        const newHotel = filter.searchByName(name, hotels);
+        if (newHotel.msg) { this.setState({ err: true }) }
+        else this.setState({ hotels: [newHotel] })
     }
 }
 

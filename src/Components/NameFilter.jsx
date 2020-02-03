@@ -22,6 +22,9 @@ class NameFilter extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
+        const { name } = this.state;
+        this.props.nameChanged(name);
+        this.setState({ name: "" })
     }
 }
 
