@@ -21,7 +21,12 @@ const searchByFacility = (facility, hotels) => {
 }
 
 const searchByRating = (rating, hotels) => {
-    return hotels
+    return hotels.reduce((tot, hotel) => {
+        if (hotel.starRating === rating) {
+            tot.push(hotel)
+        }
+        return tot;
+    }, [])
 }
 
 module.exports = { searchByName, searchByFacility, searchByRating }

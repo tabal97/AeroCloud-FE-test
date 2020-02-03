@@ -13,4 +13,10 @@ describe('Search By Rating', () => {
         const expectedValue = ["name", "starRating", "facilities"];
         expect(actualValue).toEqual(expectedValue)
     });
+    it('objects in array should correspond to the rating requested', () => {
+        const hotels = searchByRating(3, hotelsArray);
+        const actualValue = hotels[0].starRating;
+        const expectedValue = 3;
+        expect(actualValue).toBe(expectedValue)
+    });
 });
