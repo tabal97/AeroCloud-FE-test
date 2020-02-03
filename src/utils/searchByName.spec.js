@@ -22,4 +22,9 @@ describe('Search By Name', () => {
         const actualValue = searchByName("hotelone", hotelsArray);
         expect(actualValue).not.toBe(hotelsArray)
     });
+    it('returns an array of all hotels when nothing is passed', () => {
+        const actualValue = searchByName("", hotelsArray);
+        expect(actualValue).toEqual(hotelsArray)
+        expect(Array.isArray(actualValue)).toBe(true)
+    });
 });
