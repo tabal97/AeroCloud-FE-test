@@ -28,4 +28,8 @@ describe('Search By Facility', () => {
         expect(actualValue).toEqual(hotelsArray)
         expect(Array.isArray(actualValue)).toBe(true)
     });
+    it('does not mutate hotelsArray even when no parameters are passed', () => {
+        const actualValue = searchByFacility("", hotelsArray);
+        expect(actualValue).not.toBe(hotelsArray)
+    });
 });
