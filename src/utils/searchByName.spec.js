@@ -18,4 +18,8 @@ describe('Search By Name', () => {
         const expectedValue = "hotelone";
         expect(actualValue).toBe(expectedValue)
     });
+    it('does not mutate hotelsArray taken from JSON file', () => {
+        const actualValue = searchByName("hotelone", hotelsArray);
+        expect(actualValue).not.toBe(hotelsArray)
+    });
 });
