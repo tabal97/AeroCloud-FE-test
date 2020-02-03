@@ -13,4 +13,10 @@ describe('Search By Facility', () => {
         const expectedValue = ["name", "starRating", "facilities"];
         expect(actualValue).toEqual(expectedValue)
     });
+    it('objects in array should correspond to the facility passed', () => {
+        const hotels = searchByFacility("car park", hotelsArray);
+        const actualValue = hotels[0].facilities;
+        const expectedValue = "car park";
+        expect(actualValue.includes(expectedValue)).toBe(true)
+    });
 });

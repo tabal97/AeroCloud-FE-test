@@ -8,8 +8,15 @@ const searchByName = (name, hotels) => {
     } else return [...hotels]
 }
 
-const searchByFacility = (name, hotels) => {
-    return hotels
+const searchByFacility = (facility, hotels) => {
+    return hotels.reduce((tot, hotel) => {
+        hotel.facilities.filter(e => {
+            if (e === facility) {
+                tot.push(hotel);
+            }
+        })
+        return tot;
+    }, [])
 }
 
 const searchByRating = () => {
