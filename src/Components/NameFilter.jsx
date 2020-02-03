@@ -4,14 +4,24 @@ class NameFilter extends Component {
     state = { name: "" }
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label>
                     Hotel Name:
-    <input type="text" name="name" value={this.state.name} />
+    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                     <input type="submit" value="Search" />
                 </label>
             </form>
         );
+    }
+
+    handleChange = (e) => {
+        const { value } = e.target;
+        this.setState({
+            name: value
+        })
+    }
+    handleSubmit = (e) => {
+        e.preventDefault()
     }
 }
 
