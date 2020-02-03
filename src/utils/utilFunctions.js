@@ -8,8 +8,8 @@ const searchByName = (name, hotels) => {
     } else return [...hotels]
 }
 
-const searchByFacility = () => {
-
+const searchByFacility = (name, hotels) => {
+    return [{}]
 }
 
 const searchByRating = () => {
