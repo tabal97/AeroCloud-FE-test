@@ -6,7 +6,9 @@ const hotelsArray = require("../utils/hotels.json");
 class HotelLister extends Component {
     state = {}
     render() {
-        return (<h2>hotels will be listed here</h2>);
+        return (<ul>{hotelsArray.map(hotel => {
+            return <li>{hotel.name}</li>
+        })}</ul>);
     }
 }
 
