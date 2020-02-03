@@ -21,6 +21,7 @@ const searchByFacility = (facility, hotels) => {
 }
 
 const searchByRating = (rating, hotels) => {
+    if (!rating) return [...hotels]
     return hotels.reduce((tot, hotel) => {
         if (hotel.starRating === rating) {
             tot.push(hotel)

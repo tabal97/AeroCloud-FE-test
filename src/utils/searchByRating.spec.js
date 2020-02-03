@@ -23,4 +23,9 @@ describe('Search By Rating', () => {
         const actualValue = searchByRating(3, hotelsArray);
         expect(actualValue).not.toBe(hotelsArray)
     });
+    it('returns an array of all hotels when nothing is passed', () => {
+        const actualValue = searchByRating("", hotelsArray);
+        expect(actualValue).toEqual(hotelsArray)
+        expect(Array.isArray(actualValue)).toBe(true)
+    });
 });
