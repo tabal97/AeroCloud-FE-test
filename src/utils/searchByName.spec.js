@@ -12,4 +12,10 @@ describe('Search By Name', () => {
         const expectedValue = ["name", "starRating", "facilities"];
         expect(actualValue).toEqual(expectedValue)
     });
+    it('should return with an object containing a name key equal to the name parameter passed', () => {
+        const hotel = searchByName("hotelone", hotelsArray);
+        const actualValue = hotel.name;
+        const expectedValue = "hotelone";
+        expect(actualValue).toBe(expectedValue)
+    });
 });

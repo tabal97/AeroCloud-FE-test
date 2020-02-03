@@ -1,5 +1,8 @@
 const searchByName = (name, hotels) => {
-    return hotels[0]
+    const [hotelsFound] = hotels.filter(hotel => {      // pure function thus, does not mutate input data
+        return hotel.name === name
+    })
+    return hotelsFound
 }
 
 const searchByFacility = () => {
