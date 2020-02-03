@@ -19,4 +19,8 @@ describe('Search By Rating', () => {
         const expectedValue = 3;
         expect(actualValue).toBe(expectedValue)
     });
+    it('does not mutate hotelsArray taken from JSON file', () => {
+        const actualValue = searchByRating(3, hotelsArray);
+        expect(actualValue).not.toBe(hotelsArray)
+    });
 });
