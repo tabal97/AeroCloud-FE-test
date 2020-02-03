@@ -21,7 +21,7 @@ const searchByFacility = (facility, hotels) => {
 }
 
 const searchByRating = () => {
-
+    return [{}]
 }
 
 module.exports = { searchByName, searchByFacility, searchByRating }
