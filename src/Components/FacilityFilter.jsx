@@ -7,15 +7,20 @@ class FacilityFilter extends Component {
         return (
             <div>
                 <h4>Facility:</h4>
-                <select value={facility}>
-                    <option selected value="">All</option>
+                <select value={facility} onChange={this.handleChange}>
+                    <option selected value="" disabled>All</option>
                     <option value="gym">Gym</option>
                     <option value="pool">Pool</option>
                     <option value="car park">Car Park</option>
                     <option value="free wifi">Free WiFi</option>
-
                 </select></div>);
     };
+    handleChange = (e) => {
+        const { value } = e.target;
+        this.setState({
+            facility: value
+        })
+    }
 }
 
 export default FacilityFilter;
