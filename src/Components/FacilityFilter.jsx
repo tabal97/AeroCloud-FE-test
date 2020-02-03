@@ -8,7 +8,7 @@ class FacilityFilter extends Component {
             <div>
                 <h4>Facility:</h4>
                 <select value={facility} onChange={this.handleChange}>
-                    <option selected value="" disabled>N/A</option>
+                    <option selected value="">N/A</option>
                     <option value="gym">Gym</option>
                     <option value="pool">Pool</option>
                     <option value="car park">Car Park</option>
