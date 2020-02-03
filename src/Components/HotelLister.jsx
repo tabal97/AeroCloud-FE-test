@@ -3,6 +3,7 @@ import * as filter from "../utils/utilFunctions"
 import NameFilter from './NameFilter.jsx';
 import RatingFilter from './RatingFilter';
 import FacilityFilter from './FacilityFilter';
+import styles from "../Styles/HotelLister.module.css"
 const hotelsArray = require("../utils/hotels.json");
 
 
@@ -11,11 +12,13 @@ class HotelLister extends Component {
     render() {
         const { hotels, err } = this.state;
         const { nameChanged, ratingChanged, facilityChanged, resetFilters } = this;
-        return (<div>
-            <NameFilter hotels={hotels} nameChanged={nameChanged} />
-            <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
-            <FacilityFilter hotels={hotels} facilityChanged={facilityChanged} />
-            <button onClick={resetFilters}>Reset Filters!</button>
+        return (<div className={styles.grid}>
+            <div className={styles.filters}>
+                <NameFilter hotels={hotels} nameChanged={nameChanged} />
+                <RatingFilter hotels={hotels} ratingChanged={ratingChanged} />
+                <FacilityFilter hotels={hotels} facilityChanged={facilityChanged} />
+                <button onClick={resetFilters}>Reset Filters!</button>
+            </div>
             <br />
             {err ? <h3>Hotel Not Found</h3> :
                 <ul>
