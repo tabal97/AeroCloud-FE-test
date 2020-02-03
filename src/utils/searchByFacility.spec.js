@@ -23,4 +23,9 @@ describe('Search By Facility', () => {
         const actualValue = searchByFacility("car park", hotelsArray);
         expect(actualValue).not.toBe(hotelsArray)
     });
+    it('returns an array of all hotels when nothing is passed', () => {
+        const actualValue = searchByFacility("", hotelsArray);
+        expect(actualValue).toEqual(hotelsArray)
+        expect(Array.isArray(actualValue)).toBe(true)
+    });
 });

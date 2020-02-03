@@ -9,6 +9,7 @@ const searchByName = (name, hotels) => {
 }
 
 const searchByFacility = (facility, hotels) => {
+    if (!facility) return [...hotels]
     return hotels.reduce((tot, hotel) => {
         hotel.facilities.filter(e => {
             if (e === facility) {
